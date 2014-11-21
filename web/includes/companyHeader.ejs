@@ -1,0 +1,16 @@
+<div class="company">
+	<div class="container">
+		<div class="media">
+			<div class="pull-left">
+				<%if (layoutData.logoUrl && layoutData.logoFileId) { %>
+				<img class="media-object" src="<%=layoutData.logoUrl%>">
+				<% } %>
+			</div>
+
+			<div class="media-body">
+				<h3 class="media-heading"><%=layoutData.name%></h3>
+				<p><%=layoutData.description || ''%></p>
+			</div>
+		</div>
+	</div>
+</div>

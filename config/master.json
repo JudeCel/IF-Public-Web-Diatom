@@ -1,0 +1,26 @@
+{
+	"port": 6600,
+	"name": "DEV",
+	"logging": {
+		"appenders": [
+			{
+				"type": "console"
+			}
+		]
+	},
+	"mysql": {
+		"host": "dev01",
+		"port": 3306,
+		"user": "ifuser",
+		"password": "aaa",
+		"database": "if"
+	},
+	"session": {
+		"persistMaxAgeMs": 1209600000
+	},
+
+	"appUrls": {
+		"adminDashboard": ":3501/Admin/#/ManageProfile/",
+		"urlEncryptVar": "_e"
+	}
+}

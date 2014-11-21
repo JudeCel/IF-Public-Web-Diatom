@@ -1,0 +1,68 @@
+<form class="container registration panel form" method="post" id="form">
+	<div class="spacer"></div>
+	<h2 class="text-center">Sign-Up</h2>
+
+	<!-- Panel -->
+	<div class="row">
+		<div class="span10 offset1">
+			<div class="well">
+				<div class="row-fluid">
+					<div class="span8">
+						<!-- Name -->
+						<div class="controls controls-row">
+							<div class="span6 control-group <% formErrorClass(errors.firstName) %>">
+								<label class="control-label" for="firstName">
+									First Name <% errorDescription(errors.firstName) %></label>
+								<input type="text" id="firstName" name="name_first" value="<%=name_first%>">
+							</div>
+							<div class="span6 control-group <% formErrorClass(errors.lastName) %>">
+								<label class="control-label" for="lastName">
+									Last Name <% errorDescription(errors.lastName) %></label>
+								<input type="text" id="lastName" name="name_last" value="<%=name_last%>">
+							</div>
+						</div>
+
+						<!-- Email -->
+						<div class="controls controls-row">
+							<div class="span6 control-group <% formErrorClass(errors.email) %>">
+								<label class="control-label" for="email">Email <% errorDescription(errors.email) %></label>
+								<input type="text" id="email" name="email" value="<%=email%>">
+							</div>
+						</div>
+
+						<!-- Password -->
+						<div class="controls controls-row">
+							<div class="span6 control-group <% formErrorClass(errors.password) %>">
+								<label class="control-label" for="password">
+									Password </label>
+								<input type="password" id="password" name="password" value="<%=password%>">
+								<%	errorDescription(errors.password) %>
+							</div>
+							<div class="span6 control-group <% formErrorClass(errors.passwordConfirm) %>">
+								<label class="control-label" for="passwordConfirm">
+									Confirm Password </label>
+								<input type="password" id="passwordConfirm" name="passwordConfirm"
+									   value="<%=passwordConfirm%>"><% errorDescription(errors.passwordConfirm) %>
+							</div>
+						</div>
+
+						<!-- Submit -->
+						<div class="register-button-box">
+							<button type="submit" class="btn btn-primary">Register</button>&nbsp;
+							<a href="/Default.aspx">Already have an account? Log in.</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+<% function formErrorClass(errorName) { %>
+	<%=errorName ? 'error' : ''%>
+<% } %>
+
+<% function errorDescription(errorName) { %>
+	<% if (errorName) { %>
+<span class="error-required">*<%=errorName%></span>
+<% }} %>
