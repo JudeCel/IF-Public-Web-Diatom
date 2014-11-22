@@ -23,7 +23,7 @@ function UrlHelper() {
 		if (parseInt(sessionId) == sessionId)
 			sessionId = dotNetEncryptionHelper.encryptNumberForUrl(sessionId);
 
-		return 'http://' + host + appUrls.adminDashboard + '&sessId=' + sessionId;
+		return 'http://' + host + ':' + config.webAppPort + appUrls.adminDashboard + '&sessId=' + sessionId;
 		//return 'https://' + host + appUrls.adminDashboard;        TBD change to https
 	}
 

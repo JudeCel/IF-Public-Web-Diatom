@@ -11,16 +11,12 @@ var validator = ifCommon.utils.validationMethods;
 var fn = ifCommon.utils.functionHelper;
 var dotNetEncryptionHelper = ifCommon.utils.dotNetEncryptionHelper;
 var webFaultHelper = require('../../helpers/webFaultHelper.js');
-var createSess = require('../../handlers/createSess.js');
-var createAccount = require('../../handlers/createAccount.js');
+var createSess = require('../../repositories/session/createSess.js');
+var createAccount = require('../../repositories/account/createAccount.js');
 var ifData = require('if-data'), db = ifData.db;
 var emailExists = ifData.repositories.emailExists;
 var addUsers = ifData.repositories.addUsers;
-//var createSess = ifData.repositories.createSess;
-//var getUserCapacity = ifData.repositories.getUserCapacity;
 var urlHelper = require('../../helpers/urlHelper.js');
-//var accountIsActive = require('../../repositories/account/accountIsActive.js');
-//var logout = require('../../helpers/logout.js');
 
 var userFields = ['email', 'name_first', 'name_last', 'password'];
 
@@ -155,7 +151,7 @@ module.exports = function (req, res, mainCb) {
 		var userToAdd = _.pick(data, userFields);
 		userToAdd.accountId = accountId;
 		userToAdd.status = mtypes.userStatus.active;
-		//userToAdd.permissions = mtypes.userPermissions.trainee;
+		userToAdd.permissions = mtypes.userPermissions.accountManager;
 
 		addUsers({
 			users: [userToAdd]

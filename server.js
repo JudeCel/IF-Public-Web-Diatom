@@ -28,7 +28,8 @@ module.exports = function () {
 	var app = express();
 
     function routes() {
-	    mapRoutes('all', ['/register', '/registration.aspx'], require('./pages/register'));
+	    mapRoutes('all', ['/register'], require('./pages/register'));
+	    mapRoutes('all', ['/login'], require('./pages/login'));
     }
 
 	app.set('port', process.env.PORT || config.port);

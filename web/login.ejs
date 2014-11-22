@@ -1,0 +1,62 @@
+<% if(errorViewModel) { %>
+<% if(errorViewModel.type === 'accountInactive') { %> <%include includes/errors/accountInactive %><% } %>
+<% if(errorViewModel.type === 'userInactive') { %> <%include includes/errors/userInactive %><% } %>
+<% } else { %>
+<form class="form" method="post" id="form">
+	<div class="container login panel">
+		<div class="spacer"></div>
+		<h2 class="text-center">Log in</h2>
+		<!-- Panel -->
+		<div class="row">
+			<div class="span10 offset1">
+				<div class="well">
+					<div class="row-fluid">
+						<!-- left side -->
+						<div class="span6 left-side">
+							<% if(errorMessage) { %>
+								<div class="login error" style="width: 222px">
+								Sorry, your email or password is incorrect. Please try again.
+								</div>
+							<% } %>
+							<div class="control-group">
+								<label class="control-label" for="email">Email</label>
+								<input type="text" id="email" name="email" value="<%=email%>">
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="password">Password</label>
+								<input type="password" id="password" name="password" value="<%=password%>">
+
+								<div class="controls">
+									<a href="/ForgotPassword">Forgot password?</a>
+								</div>
+							</div>
+							<div class="control-group">
+								<button type="submit" class="btn btn-primary" id="login">Log in</button>
+							</div>
+						</div>
+						<input type="hidden" name="userId" id="userId"/>
+						<input type="hidden" name="redirectUrl" id="redirectUrl"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+<% } %>
+
+<script>
+	$(function () {
+		function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+		var nw = new Date();
+		$('#ds').val([nw.getFullYear(), nw.getMonth() + 1, nw.getDate()].join('-'));
+		$('#userId').val(getParameterByName('userId'));
+		$('#redirectUrl').val(getParameterByName('redirectUrl'));
+	})
+</script>

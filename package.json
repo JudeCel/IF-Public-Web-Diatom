@@ -15,6 +15,7 @@
 		"joi": "~0.3.5",
 		"if-data": "git+ssh://git@github.com:JudeCel/IF-Data-Diatom.git",
 		"if-common": "git+ssh://git@github.com:JudeCel/IF-Common-Diatom.git",
+		"if-auth": "git+ssh://git@github.com:JudeCel/IF-Auth-Diatom.git",
 		"request": "~2.22.0",
 		"q": "~0.9.7",
 		"log4js-node-amqp": "~0.0.5",

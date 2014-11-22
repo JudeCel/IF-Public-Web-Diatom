@@ -1,5 +1,6 @@
 {
 	"port": 6600,
+	"webAppPort": 3501,
 	"name": "DEV",
 	"logging": {
 		"appenders": [
@@ -18,9 +19,8 @@
 	"session": {
 		"persistMaxAgeMs": 1209600000
 	},
-
 	"appUrls": {
-		"adminDashboard": ":3501/Admin/#/ManageProfile/",
+		"adminDashboard": "/Admin/#/ManageProfile/",
 		"urlEncryptVar": "_e"
 	}
 }
