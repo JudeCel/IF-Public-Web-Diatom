@@ -187,7 +187,7 @@ module.exports = function (req, res, mainCb) {
 		var url;
 
 		if (queryStringRedirectInvalid) {
-			if (perms == mtypes.userPermissions.accountManager)
+			if (perms == mtypes.userType.accountManager)
 				url = urlHelper.getAdminDashboardRedirectUrl(params);
 			else
 				url = urlHelper.getAdminDashboardRedirectUrl(params);       // TODO
