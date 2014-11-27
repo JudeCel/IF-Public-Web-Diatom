@@ -151,7 +151,7 @@ module.exports = function (req, res, mainCb) {
 		var userToAdd = _.pick(data, userFields);
 		userToAdd.accountId = accountId;
 		userToAdd.status = mtypes.userStatus.active;
-		userToAdd.permissions = mtypes.userPermissions.accountManager;
+		//userToAdd.permissions = mtypes.userType.accountManager;
 
 		addUsers({
 			users: [userToAdd]
