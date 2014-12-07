@@ -30,6 +30,8 @@ module.exports = function () {
     function routes() {
 	    mapRoutes('all', ['/register'], require('./pages/register'));
 	    mapRoutes('all', ['/login'], require('./pages/login'));
+	    mapRoutes('all', ['/forgotpassword'], require('./pages/forgotpassword'));
+	    mapRoutes('all', ['/newpassword/:hash'], require('./pages/newpassword'));
     }
 
 	app.set('port', process.env.PORT || config.port);
