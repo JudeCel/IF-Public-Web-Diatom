@@ -6,21 +6,29 @@
     "start": "node app",
     "test": "grunt test"
   },
+  "engineStrict": true,
+  "engines": {
+    "node": "0.12.7",
+    "npm": "1.3.4"
+  },
   "dependencies": {
-    "express": "3.0.0rc2",
-    "ejs": "~0.8.4",
-    "lodash": "~1.3.1",
     "async": "~0.2.9",
-    "log4js": "~0.6.8",
-    "joi": "~0.3.5",
-    "if-data": "git+ssh://git@github.com:JudeCel/IF-Data-Diatom.git",
-    "if-common": "git+ssh://git@github.com:JudeCel/IF-Common-Diatom.git",
+    "ejs": "~0.8.4",
+    "express": "^3.21.2",
     "if-auth": "git+ssh://git@github.com:JudeCel/IF-Auth-Diatom.git",
-    "request": "~2.22.0",
-    "q": "~0.9.7",
+    "if-common": "git+ssh://git@github.com:JudeCel/IF-Common-Diatom.git",
+    "if-data": "git+ssh://git@github.com:JudeCel/IF-Data-Diatom.git",
+    "joi": "~0.3.5",
+    "lodash": "~1.3.1",
+    "log4js": "~0.6.8",
     "log4js-node-amqp": "~0.0.5",
-    "simpler-config": "0.0.4",
-    "nodemailer": "~1.3.0"
+    "mysql": "^2.9.0",
+    "nodemailer": "~1.3.0",
+    "q": "~0.9.7",
+    "request": "~2.22.0",
+    "sequelize": "^3.11.0",
+    "sequelize-cli": "^1.9.1",
+    "simpler-config": "0.0.4"
   },
   "devDependencies": {
     "tap": "~0.4.3",
